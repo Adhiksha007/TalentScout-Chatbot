@@ -53,7 +53,12 @@ def initialize_session_state():
 load_custom_css()
 initialize_session_state()
 
+# API Key handling logic
+# Prioritizes Streamlit Secrets (Cloud) -> .env (Local) -> Manual Input
 api_key = os.getenv("GEMINI_API_KEY")
+
+if not api_key and "GEMINI_API_KEY" in st.secrets:
+    api_key = st.secrets["GEMINI_API_KEY"]
 
 # Sidebar Implementation
 with st.sidebar:

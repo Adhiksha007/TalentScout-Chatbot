@@ -41,6 +41,17 @@ The **TalentScout Hiring Assistant** is a high-performance AI chatbot designed f
 
 ---
 
+## IV. Deployment (Streamlit Cloud)
+To deploy this app on **Streamlit Community Cloud**:
+1. Push your repository to GitHub (ensure `.env` is **not** pushed).
+2. Connect your repo to [Streamlit Cloud](https://share.streamlit.io/).
+3. In the app settings, go to **Secrets** and add:
+   ```toml
+   GEMINI_API_KEY = "your_actual_api_key_here"
+   ```
+
+---
+
 ## IV. Prompt Design
 - **Extraction (Pass 1)**: Converts natural language into structured JSON.
 - **Conversation (Pass 2)**: Uses a stage-specific System Prompt to maintain persona and objective.
