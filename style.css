@@ -1,0 +1,100 @@
+/* Premium WhatsApp-style Interface (Dark Mode) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+html, body, [data-testid="stAppViewContainer"] {
+    font-family: 'Inter', sans-serif;
+    background: #0b141a; /* WhatsApp Dark Mode Background */
+    color: #e9edef;
+}
+
+/* Hide Streamlit elements for a cleaner look */
+header, [data-testid="stHeader"] {
+    background-color: rgba(0,0,0,0) !important;
+}
+
+[data-testid="stSidebar"] {
+    background: #111b21;
+    border-right: 1px solid #202c33;
+}
+
+/* Chat Message Alignment Logic */
+[data-testid="stChatMessage"] {
+    background-color: transparent !important;
+    padding: 0.5rem 1rem !important;
+    display: flex !important;
+}
+
+/* User Message (Right Aligned) */
+div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]) {
+    flex-direction: row-reverse !important;
+}
+
+div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarUser"]) [data-testid="stChatMessageContent"] {
+    background-color: #005c4b !important; /* WhatsApp User Green */
+    color: #e9edef !important;
+    border-radius: 15px 0px 15px 15px !important;
+    margin-left: auto !important;
+    margin-right: 0px !important;
+    padding: 10px 15px !important;
+    max-width: 80% !important;
+    text-align: left !important;
+}
+
+/* Assistant Message (Left Aligned) */
+div[data-testid="stChatMessage"]:has(div[data-testid="stChatMessageAvatarAssistant"]) [data-testid="stChatMessageContent"] {
+    background-color: #202c33 !important; /* WhatsApp Assistant Grey */
+    color: #e9edef !important;
+    border-radius: 0px 15px 15px 15px !important;
+    margin-right: auto !important;
+    margin-left: 0px !important;
+    padding: 10px 15px !important;
+    max-width: 80% !important;
+}
+
+/* Hide Avatars for the cleaner bubble look */
+[data-testid="stChatMessageAvatarUser"], [data-testid="stChatMessageAvatarAssistant"] {
+    display: none !important;
+}
+
+/* Sidebar Styling */
+h1, h2, h3 {
+    color: #00a884 !important; /* WhatsApp Teal */
+    font-weight: 600 !important;
+}
+
+.label {
+    font-size: 0.75rem;
+    color: #8696a0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 10px;
+}
+
+.value {
+    font-size: 0.95rem;
+    color: #e9edef;
+    padding: 5px 0;
+    border-bottom: 1px solid #202c33;
+    margin-bottom: 5px;
+}
+
+/* Input Bar */
+.stChatInputContainer {
+    background: #202c33 !important;
+    border-top: 1px solid #202c33 !important;
+}
+
+/* Buttons */
+.stButton>button {
+    background-color: #00a884 !important;
+    color: white !important;
+    border-radius: 20px !important;
+    border: none !important;
+    font-weight: 600 !important;
+    margin-top: 5px;
+}
+
+.stButton>button:hover {
+    background-color: #06cf9c !important;
+    color: white !important;
+}
